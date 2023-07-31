@@ -1,0 +1,24 @@
+version: "3"
+volumes:
+  docker:
+
+services:
+  database:
+    image: sakiladb/mysql
+    ports:
+      - 3306:3306
+    networks:
+      - app
+
+  next:
+    build: .
+    ports:
+      - 3000:3000
+    depends_on:
+      - database
+    networks:
+      - app
+
+networks:
+  app:
+    driver: bridge
