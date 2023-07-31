@@ -1,34 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+welcome
 
-## Getting Started
+the following are charts and displays for some sakila queries i have built
 
-First, run the development server:
+queries at `/queries.sql` or `/src/database/queries/index.ts`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+since i couldnt find a way to run docker-compose at a cloud service, this project wont be deployed
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+to run the project + db run `docker compose up -d` and the frondtend will be available at `localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+tooling:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- nextjs + chartjs + raw html tags for displaying results
+- mysql2 as mysql driver
+- sakila/mysql image for sakila seeded db running on a container
 
-## Learn More
+query results preview:
 
-To learn more about Next.js, take a look at the following resources:
+`
+-- total revenue for each store
+`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![img.png](readme_images/img.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+`-- number of times each film has been rented`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![img_1.png](readme_images/img_1.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+`-- number of rentals for each year/month`
+
+![img_2.png](readme_images/img_2.png)
+
+---
+
+`-- most rented films for each year/month`
+
+![img_3.png](readme_images/img_3.png)
+
+---
+
+`-- films rented by customer_id`
+
+![img_4.png](readme_images/img_4.png)
+
+---
+
+`-- films list per language`
+
+![img_5.png](readme_images/img_5.png)
+
+---
+
+`-- all actors and/or actresses from most rented film`
+
+![img_6.png](readme_images/img_6.png)
